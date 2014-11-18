@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="AChat">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MyChat</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+    html, body, #chatwindow, .container-fluid {
+      height: 100%;
+    }
+
+    .full-height {
+      height: 100%;
+    }
+
+    #messageswindow {
+      background-color: #EFEFEF;
+      padding: 10px;
+    }
+    #inputwindow {
+      background-color: #ADCFE9;
+      padding: 10px;
+    }
+    #inputwindow form, #inputwindow form textarea {
+      height: 100%;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="chatwindow" ng-controller="ChatController">
+      <div class="container-fluid">
+        <div class="row" style="height: 80%;">
+          <div class="col-md-12 full-height">
+            <div id="messageswindow" class="full-height">
+              <div class="row" ng-repeat="message in messages">
+                <div class="col-md-3">
+                  {{message.from}}<br>
+                  {{message.time}}
+                </div>
+                <div class="col-md-9">{{message.message}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="height: 20%;">
+          <div class="col-md-12 full-height">
+            <div id="inputwindow" class="full-height">
+              <form name="message">
+                <textarea ng-model="input_message" ng-enter="sendMessage()" class="form-control"></textarea>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="namemodal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Nickname</h4>
+            </div>
+            <div class="modal-body">
+              <input type="text" ng-model="nickname" class="form-control" placeholder="ChatName42"
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Go!</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div>
+    
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+
+    <script src="public/app.js"></script>
+  </body>
+</html>
