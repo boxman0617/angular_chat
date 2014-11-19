@@ -21,7 +21,7 @@ class PostMessage
 	}
 }
 
-file_put_contents(__DIR__.'/../conversation/debug.log', var_export($_POST, true)."\n\n");
-
 $m = new PostMessage();
-$m->WriteToConversation($_POST['msg'], $_POST['from']);
+$postdata = file_get_contents("php://input");
+$request = json_decode($postdata);
+$m->WriteToConversation($request->msg, $request->from);
