@@ -14,4 +14,4 @@ class FetchMessages
 }
 
 $fm = new FetchMessages();
-$fm->ReadConversion();
+$fm->ReadConversation();
