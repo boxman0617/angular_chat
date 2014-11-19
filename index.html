@@ -58,6 +58,7 @@
           <div class="col-md-12 full-height">
             <div id="inputwindow" class="full-height">
               <form name="message">
+                <label>{{nickname}}</label>
                 <textarea ng-model="input_message" ng-enter="sendMessage()" class="form-control"></textarea>
               </form>
             </div>
@@ -73,7 +74,6 @@
             </div>
             <div class="modal-body">
               <input type="text" ng-model="nickname" class="form-control" placeholder="ChatName42">
-              <span style="display: none;">{{nickname}}</span>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" data-dismiss="modal">Go!</button>
