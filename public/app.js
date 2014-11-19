@@ -15,9 +15,7 @@
 		$scope.sendMessage = function() {
 			$http.post('ajax/post-message.php', {'msg': $scope.input_message, 'from': $scope.nickname}).
 				success(function(data, status, headers, config) {
-					$scope.$apply(function() {
-						$scope.input_message = '';
-					});
+					$scope.input_message = '';
 				}).
 				error(function(data, status, headers, config) {
 					alert('Something is wrong! Oh no!');
@@ -27,15 +25,11 @@
 		$scope.interval_promise = $interval(function() {
 			$http.get('ajax/fetch-messages.php').
 				success(function(data, status, headers, config) {
-					$scope.$apply(function() {
-						$scope.messages = data;
-					});
+					$scope.messages = data;
 				}).
 				error(function(data, status, headers, config) {
 					alert('Something is wrong! Oh no!');
-					$scope.$apply(function() {
-						$scope.ok_to_fetch = false;
-					});
+					$scope.ok_to_fetch = false;
 				});
 		}, 1000);
 
