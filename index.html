@@ -44,6 +44,15 @@
       min-width: 100px;
       min-height: 10px;
     }
+    .message-row {
+      margin-bottom: 5px;
+    }
+    .message-row .message {
+      background-color: #ffffff;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      padding: 10px;
+    }
     </style>
   </head>
   <body>
@@ -53,12 +62,12 @@
         <div class="row" style="height: 80%;">
           <div class="col-md-12 full-height">
             <div id="messageswindow" class="full-height">
-              <div class="row" ng-repeat="message in messages">
-                <div class="col-md-3">
+              <div class="row message-row" ng-repeat="message in messages">
+                <div class="col-md-1">
                   {{message.from}}<br>
                   {{message.time}}
                 </div>
-                <div class="col-md-9">{{message.message}}</div>
+                <div class="col-md-11 message">{{message.message}}</div>
               </div>
             </div>
           </div>
