@@ -21,5 +21,7 @@ class PostMessage
 	}
 }
 
+file_put_contents(__DIR__.'/../conversation/debug.log', var_export($_POST, true)."\n\n");
+
 $m = new PostMessage();
 $m->WriteToConversation($_POST['msg'], $_POST['from']);
