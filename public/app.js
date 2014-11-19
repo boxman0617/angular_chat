@@ -13,7 +13,7 @@
 		$('#namemodal').modal();
 
 		$scope.sendMessage = function() {
-			$http.post('/ajax/post-message.php', {'msg': $scope.input_message, 'from': $scope.nickname}).
+			$http.post('ajax/post-message.php', {'msg': $scope.input_message, 'from': $scope.nickname}).
 				success(function(data, status, headers, config) {
 					$scope.$apply(function() {
 						$scope.input_message = '';
@@ -25,7 +25,7 @@
 		};
 
 		$scope.interval_promise = $interval(function() {
-			$http.get('/ajax/fetch-messages.php').
+			$http.get('ajax/fetch-messages.php').
 				success(function(data, status, headers, config) {
 					$scope.$apply(function() {
 						$scope.messages = data;
