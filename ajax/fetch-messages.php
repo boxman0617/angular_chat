@@ -1,7 +1,7 @@
 <?php
 class FetchMessages
 {
-	const CONVO_LOCATION = '../conversion/conversion.txt';
+	const CONVO_LOCATION = '../conversation/conversation.txt';
 
 	public function ReadConversation()
 	{
