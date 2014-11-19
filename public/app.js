@@ -10,8 +10,6 @@
 		$scope.ok_to_fetch = true;
 		$scope.interval_promise = null;
 
-		$('#namemodal').modal();
-
 		$scope.sendMessage = function() {
 			$http.post('ajax/post-message.php', {'msg': $scope.input_message, 'from': $scope.nickname}).
 				success(function(data, status, headers, config) {
@@ -54,3 +52,7 @@
 	    };
 	});
 })();
+
+$(function() {
+	$('#namemodal').modal();
+});

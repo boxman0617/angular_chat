@@ -36,10 +36,19 @@
     #inputwindow form, #inputwindow form textarea {
       height: 100%;
     }
+    #nickname {
+      position: fixed;
+      top: 100px;
+      right: 0;
+      padding: 10px;
+      min-width: 100px;
+      min-height: 10px;
+    }
     </style>
   </head>
   <body>
     <div id="chatwindow" ng-controller="ChatController">
+      <div id="nickname">{{nickname}}</div>
       <div class="container-fluid">
         <div class="row" style="height: 80%;">
           <div class="col-md-12 full-height">
@@ -58,7 +67,6 @@
           <div class="col-md-12 full-height">
             <div id="inputwindow" class="full-height">
               <form name="message">
-                <label>{{nickname}}</label>
                 <textarea ng-model="input_message" ng-enter="sendMessage()" class="form-control"></textarea>
               </form>
             </div>
