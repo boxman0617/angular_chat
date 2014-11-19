@@ -14,6 +14,7 @@
 			$http.post('ajax/post-message.php', {'msg': $scope.input_message, 'from': $scope.nickname}).
 				success(function(data, status, headers, config) {
 					$scope.input_message = '';
+					document.getElementById('messageswindow').scrollTop = document.getElementById('messageswindow').scrollHeight;
 				}).
 				error(function(data, status, headers, config) {
 					alert('Something is wrong! Oh no!');
